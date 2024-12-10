@@ -1,0 +1,26 @@
+info:
+  contact: {}
+paths:
+  /hello:
+    get:
+      consumes:
+      - application/json
+      description: Metodo que retorna un mensaje de saludo usando RPC
+      parameters:
+      - description: Nombre del usuario
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Saludo de bienvenida
+          schema:
+            type: string
+        "400":
+          description: 'Error: el nombre no puede estar vacío'
+          schema:
+            type: string
+swagger: "2.0"
